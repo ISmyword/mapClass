@@ -1,0 +1,61 @@
+<view class="container">
+  <view class="head" style="padding-top:{{statusBarHeight}}px">
+    <view class="head-left">
+      <image bindtap="bindBackIndex" class="head-back" src="../../images/back.png"></image>
+    </view>
+    <view class="head-title">
+      <!--小程序标题-->
+      <text>{{title}}</text>
+      <!-- <view class="head-report">
+        <image bindtap="gotoReport" src="../../utils/images/icon_presentation.png"></image>
+      </view> -->
+    </view>
+
+  </view>
+  <view class="map-view">
+    <map class="map" 
+      longitude="{{longitude}}" 
+      latitude="{{latitude}}" 
+      include-points="{{points}}" 
+      markers='{{markers}}' 
+      bindmarkertap="makertap"
+      show-location
+      scale="14"
+      style="width: 100%; height: {{mapHeight}}rpx;">
+    </map>
+  </view>
+    <view class="class-panel" style="height:{{planHeight}}rpx"> 
+      <block wx:if="{{isJump}}">
+        <view class="class">
+          <text class="class-info-top title">{{mapInfo.name}}</text>
+          <text class="class-info-top">{{mapInfo.address}}</text>
+          <text class="class-info-top">{{mapInfo.phone}}</text>
+        </view>
+        <view class="class-li">
+          <view class="class-info title">课程信息</view>
+          <view class="class-info"><view class="label">课程主题:</view><text>{{classInfo.theme}}</text></view>
+          <view class="class-info"><view class="label">讲       师:</view><text>{{classInfo.teacher}}</text></view>
+          <view class="class-info"><view class="label">课程时间:</view><text>{{classInfo.data}}</text></view>
+          <view class="class-info"><view class="label"> </view><text>{{classInfo.time}}</text></view>
+          <view class="class-info"><view class="label">课程内容:</view><text>{{classInfo.content}}</text></view>
+          <view class="class-info"><view class="label">详细地址:</view><text>{{classInfo.address}}</text></view>
+        </view>
+      </block>
+      <block wx:else>
+          <view class="place-title">
+            <text>{{mapInfo.name}}</text>
+          </view>
+          <view class="">
+            <view class="place-info">地址:  <text>{{mapInfo.address}}</text></view>
+            <view class="place-info">电话:  <text>{{mapInfo.phone}}</text></view>
+            <view class="place-info">门店联系人:  <text>{{mapInfo.contacts}}</text></view>
+            <view class="place-info">营业时间:  <text>{{mapInfo.businessHours}}</text></view>
+            <view class="place-info">服务项目:  <text>{{mapInfo.remake}}</text></view>
+          </view>
+      </block>
+    </view>
+    <view class="palce-btn">
+      <view class="" bindtap="makePhoneCall">电话</view>
+      <view class="navigate" bindtap="navigate">导航</view>
+    </view>
+</view>

@@ -1,0 +1,151 @@
+/**index.wxss**/
+.map-view{
+  width: 100%;
+  height: 700rpx;
+}
+.class-panel{
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  border-radius: 40rpx;
+  background: #ffffff;
+  z-index: 2;
+}
+.select-view{
+  position: relative;
+  margin-top: 30rpx;
+}
+.select-view .search{
+  position: absolute;
+  width: 45rpx;
+  height: 45rpx;
+  top: 17.5rpx;
+  left: 65rpx;
+  z-index: 5;
+}
+.onSearch{
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+}
+.select-view .delete{
+  position: absolute;
+  width: 45rpx;
+  height: 45rpx;
+  top: 17.5rpx;
+  left: 545rpx;
+  z-index: 5;
+}
+.select-view .delete2{
+  position: absolute;
+  width: 35rpx;
+  height: 35rpx;
+  top: 22.5rpx;
+  right: 75rpx;
+  z-index: 5;
+}
+.select-view .search-button{
+  float: left;
+  width: 95rpx;
+  height: 75rpx;
+  line-height: 75rpx;
+  margin: 5rpx 0 5rpx 5rpx;
+  color: #008aff;
+  border-top-right-radius:  10rpx;
+  border-bottom-right-radius:  10rpx;
+  background-color: #e3e3e3;
+  text-align: center;
+}
+
+.select-view .input1{
+  width: 595rpx;
+  height: 75rpx;
+  line-height: 75rpx;
+  padding-left: 65rpx;
+  margin: 5rpx auto;
+  border-radius: 10rpx;
+  background-color: #e3e3e3;
+  
+}
+.select-view .input2{
+  float: left;
+  width: 495rpx;
+  height: 75rpx;
+  line-height: 75rpx;
+  padding-left: 65rpx;
+  margin: 5rpx 0 5rpx 50rpx;
+  border-top-left-radius:  10rpx;
+  border-bottom-left-radius:  10rpx;
+  background-color: #e3e3e3;
+  
+}
+
+.map-tab-ul{
+  width: 650rpx;
+  margin: 25rpx auto;
+  font-size: 23rpx;
+}
+.map-tab-li {
+  float: left;
+  width: 132.5rpx;
+  height: 120rpx;
+  margin: 10rpx 15rpx;
+  text-align: center;
+}
+.map-tab-li image{
+  width: 65rpx;
+  height: 65rpx;
+  line-height: 50rpx;
+  /* border-radius: 100rpx; */
+  margin: 5rpx 33.75rpx;  
+}
+.class-panel-2{
+  width: 650rpx;
+  margin: 75rpx auto;
+}
+
+.navigate-info-li{
+  width: 600rpx;
+  height: 100rpx;
+  padding: 10rpx 15rpx;
+  border-bottom: 1px solid #eeeeee;
+
+
+}
+.class-panel-2 .navigate-info-li .left{
+  float: left;
+  width: 500rpx;
+  height: 100%;
+  line-height: 50rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.class-panel-2 .navigate-info-li .left .title{
+  font-size: 26rpx;
+  font-weight: 600;
+
+}
+.class-panel-2 .navigate-info-li .left .address{
+  font-size: 24rpx;
+
+}
+.class-panel-2 .navigate-info-li .right{
+  float: right;
+  width: 100rpx;
+  height: 100%;
+  line-height: 100rpx;
+  font-size: 25rpx;
+  text-align: right;
+}
+.navigate-info-li .right image{
+  width: 20rpx;
+  height: 20rpx;
+}
+.navigate-btn{
+  color: #008aff;
+}
+.class-panel-3{
+  width: 650rpx;
+ margin: 75rpx auto;
+}
