@@ -1,0 +1,236 @@
+/**index.wxss**/
+.map-view{
+  width: 100%;
+  height: 700rpx;
+}
+.class-panel{
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  border-radius: 40rpx;
+  background: #ffffff;
+  z-index: 2;
+}
+.select-view{
+  position: relative;
+  margin-top: 30rpx;
+}
+.select-view .search{
+  position: absolute;
+  width: 45rpx;
+  height: 45rpx;
+  top: 20rpx;
+  left: 65rpx;
+  z-index: 5;
+}
+.onSearch{
+  width: 100%;
+  height: 100%;
+  font-weight: 550;
+  z-index: 5;
+}
+.select-view .delete{
+  position: absolute;
+  width: 45rpx;
+  height: 45rpx;
+  top: 17.5rpx;
+  left: 545rpx;
+  z-index: 5;
+}
+.select-view .delete2{
+  position: absolute;
+  width: 30rpx;
+  height: 30rpx;
+  top: 25rpx;
+  right: 75rpx;
+  z-index: 5;
+}
+.select-view .search-button{
+  float: left;
+  width: 98rpx;
+  height: 75rpx;
+  line-height: 75rpx;
+  margin: 5rpx 0 5rpx 2rpx;
+  color: #008aff;
+  border-top-right-radius:  10rpx;
+  border-bottom-right-radius:  10rpx;
+  background-color: #e3e3e3;
+  text-align: center;
+}
+
+.select-view .input1{
+  width: 595rpx;
+  height: 75rpx;
+  line-height: 75rpx;
+  padding-left: 65rpx;
+  margin: 5rpx auto;
+  border-radius: 10rpx;
+  background-color: #e3e3e3;
+  
+}
+.select-view .input2{
+  float: left;
+  width: 495rpx;
+  height: 75rpx;
+  line-height: 75rpx;
+  padding-left: 65rpx;
+  margin: 5rpx 0 5rpx 50rpx;
+  border-top-left-radius:  10rpx;
+  border-bottom-left-radius:  10rpx;
+  background-color: #e3e3e3;
+  
+}
+
+.map-tab-ul{
+  width: 650rpx;
+  margin: 25rpx auto;
+  font-size: 23rpx;
+}
+.map-tab-li {
+  float: left;
+  /* width: 132.5rpx; */
+  width: 186.6rpx;
+  height: 120rpx;
+  margin: 10rpx 15rpx;
+  text-align: center;
+}
+.map-tab-li image{
+  width: 65rpx;
+  height: 65rpx;
+  line-height: 50rpx;
+  /* border-radius: 100rpx; */
+  /* margin: 5rpx 33.75rpx;   */
+  margin: 5rpx 60.5rpx 0rpx;  
+
+}
+.class-panel-2{
+  width: 650rpx;
+  margin: 95rpx auto;
+}
+
+.class-panel-2 .navigate-info-li{
+  width: 600rpx;
+  height: 100rpx;
+  padding: 10rpx 15rpx;
+  border-bottom: 1px solid #eeeeee;
+
+
+}
+.class-panel-2 .navigate-info-li .left{
+  position: relative;
+  float: left;
+  width: 455rpx;
+  height: 100%;
+  line-height: 35rpx;
+  padding-left: 45rpx;
+
+}
+.class-panel-2 .navigate-info-li .left .navigate2{
+  position: absolute;
+  width: 35rpx;
+  height: 35rpx;
+  top: 27.5rpx;
+  left: 0rpx;
+}
+.class-panel-2 .navigate-info-li .left .title{
+  height: 50rpx;
+  line-height: 50rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.class-panel-2 .navigate-info-li .left .address{
+  height: 50rpx;
+  line-height: 50rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.navigate-info-li .left .title{
+  font-size: 30rpx;
+  font-weight: 600;
+}
+
+.class-panel-2 .navigate-info-li .right{
+  float: right;
+  width: 100rpx;
+  height: 100%;
+  line-height: 100rpx;
+  font-size: 25rpx;
+  text-align: right;
+}
+.navigate-info-li .right image{
+  width: 20rpx;
+  height: 20rpx;
+}
+
+.class-panel-3{
+ width: 650rpx;
+ margin: 95rpx auto;
+}
+.class-panel-3 .navigate-info-li{
+  width: 650rpx;
+  height: 135rpx;
+  padding: 15rpx 15rpx 15rpx 0;
+  border-bottom: 1px solid #eeeeee;
+
+
+}
+.class-panel-3 .navigate-info-li .right .btn{
+  float: left;
+  width: 50%;
+  height: 135rpx;
+  line-height: 135rpx;
+}
+.class-panel-3 .navigate-info-li .left{
+  float: left;
+  width: 420rpx;
+  padding-right: 20rpx;
+  height: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.class-panel-3 .navigate-info-li .left .title{
+  height: 45rpx;
+  line-height: 45rpx;
+  font-size: 30rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.class-panel-3 .navigate-info-li .left .address , .navigate-info-li .left .phone{
+  height: 45rpx;
+  line-height: 45rpx;
+  font-size: 24rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.class-panel-3 .navigate-info-li .right{
+  float: right;
+  width: 200rpx;
+  height: 100%;
+  margin-left: 10rpx;
+  font-size: 25rpx;
+  text-align: center;
+}
+.navigate-info-li .right image{
+  width: 20rpx;
+  height: 20rpx;
+}
+.phone-tbn{
+  color: #ff8e8e;
+}
+.navigate-btn{
+  color: #008aff;
+}
+.phone-tbn text{
+  color: #bdbdbd;
+}
+.nomore{
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+}

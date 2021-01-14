@@ -1,0 +1,29 @@
+
+.section{
+  position: relative;
+  margin-top: 30rpx;
+  font-size: 30rpx;
+}
+.section image{
+  position: absolute;
+  width: 45rpx;
+  height: 45rpx;
+  top: 17.5rpx;
+  left: 65rpx;
+
+}
+.section input{
+  width: 595rpx;
+  height: 75rpx;
+  line-height: 75rpx;
+  padding-left: 65rpx;
+  margin: 5rpx auto;
+  /* border: 1px solid #c3c3c3; */
+  border-radius: 40rpx;
+  background-color: #e3e3e3;
+}
+.text_box{
+  margin: 10px 25px;
+  border-bottom:1px solid #c3c3c3;
+  padding-bottom:10px
+}

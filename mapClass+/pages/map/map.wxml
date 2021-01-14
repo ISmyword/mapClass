@@ -1,0 +1,77 @@
+<view class="container">
+  <view class="head" style="padding-top:{{statusBarHeight}}px">
+    <view class="head-left">
+      <image bindtap="bindBackIndex" class="head-back" src="../../images/back.png"></image>
+    </view>
+    <view class="head-title">
+      <!--小程序标题-->
+      <text>{{title}}</text>
+      <!-- <view class="head-report">
+        <image bindtap="gotoReport" src="../../utils/images/icon_presentation.png"></image>
+      </view> -->
+    </view>
+
+  </view>
+  <view class="mapview">
+    <map class="map" 
+      longitude="{{longitude}}" 
+      latitude="{{latitude}}" 
+      include-points="{{points}}" 
+      markers='{{markers}}' 
+      bindmarkertap="makertap"
+      show-location
+      scale="14"
+      style="width: 100%; height: {{mapHeight}}rpx;">
+    </map>
+    <!-- <view class="map-tab-bar map-foot {{isShow ? '' : 'map-hide'}}">
+      <view class="map-name">{{textData.name}}</view>
+      <view class="map-address">{{textData.desc}}</view>
+    </view> -->
+  </view>
+  <view class="navigate-info" style="height:{{planHeight}}rpx">
+    <view wx:if="{{markers.length>0}}" class=" first">
+      <view class="navigate-info-li first">
+        <view class="left" bindtap="bindSearchFirst" data-index="0">
+          <view class="title">
+            <text >{{textData.name}}</text>
+          </view>
+          <view class="address">
+            地址: <text >{{textData.address}}</text>
+          </view>
+          <view class="phone">
+            电话: <text >{{textData.phone}}</text>
+          </view>
+        </view>
+        <view class="right">
+          <view class="btn phone-tbn" bindtap="makePhoneCall" data-phone="{{textData.phone}}"><image mode="aspectFill" src="../../images/phone.png"></image> 电话 <text>|</text></view>
+          <view class="btn navigate-btn" bindtap="navigate" data-index="{{textData.id}}"><image mode="aspectFill" src="../../images/navigate.png"></image> 导航</view>
+        </view>
+      </view>
+    </view>
+    <view wx:else class="nomore">暂无数据</view>
+    <view>
+    <scroll-view scroll-y="true" style="height:{{scrollHeight}}rpx" bindscrolltoupper="onPullDownRefresh" bindscrolltolower="onReachBottom" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+      <block wx:for-index="index" wx:for-item="item" wx:for="{{markers}}" style="height:{{planHeight}}rpx">
+        <view wx:if="{{!item.ischecked}}" class="navigate-info-li">
+          <view class="left" bindtap="bindSearch" data-index="{{index}}">
+            <view class="title">
+              <text >{{item.name}}</text>
+            </view>
+            <view class="address">
+              地址: <text >{{item.address}}</text>
+            </view>
+            <view class="phone">
+              电话: <text >{{item.phone}}</text>
+            </view>
+          </view>
+          <view class="right">
+            <view class="btn phone-tbn" bindtap="makePhoneCall" data-phone="{{item.phone}}"><image mode="aspectFill" src="../../images/phone.png"></image> 电话 <text>|</text></view> 
+            <view class="btn navigate-btn" bindtap="navigate" data-index="{{index}}"><image mode="aspectFill" src="../../images/navigate.png"></image> 导航</view>
+          </view>
+        </view>
+      </block>
+    </scroll-view>
+    </view>
+    <!-- <button type="primary" bindtap="navigate">导航</button> -->
+  </view>
+</view>

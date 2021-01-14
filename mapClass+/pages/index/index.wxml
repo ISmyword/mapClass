@@ -1,0 +1,134 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="head" style="padding-top:{{statusBarHeight}}px">
+    <view class="head-left">
+      <image bindtap="goToManEn" class="head-back" src="../../images/back.png"></image>
+    </view>
+    <view class="head-title">
+      <!--小程序标题-->
+      <text>母婴出行</text>
+      <!-- <view class="head-report">
+        <image bindtap="gotoReport" src="../../utils/images/icon_presentation.png"></image>
+      </view> -->
+    </view>
+
+  </view>
+  <view class="map-view">
+    <map class="map" 
+      longitude="{{longitude}}" 
+      latitude="{{latitude}}" 
+      include-points="{{points}}" 
+      markers='{{markers}}' 
+      bindmarkertap="makertap"
+      show-location
+      scale="10"
+      style="width: 100%; height: {{mapHeight}}rpx;">
+    </map>
+  </view>
+  <!--分类面板-->
+  <view class="class-panel" style="height:{{planHeight}}rpx"> 
+    <view class="select-view">
+      <image bindtap="onClickBack2" class="search" mode="aspectFill" src="{{isShowPanel2 || isShowPanel3? '../../images/back2.png': '../../images/search.png'}} "></image>
+      <input class="{{isShowPanel1? 'input1': 'input2'}}" bindinput="bindInput" value="{{keywords}}" placeholder="搜索医院、幼儿园、家政" disabled="{{disabled}}"/>
+      <image wx:if="{{isShowPanel2}}" bindtap="onClickDelete" class="delete" mode="aspectFill" src="../../images/delete.png"></image>
+      <view wx:if="{{isShowPanel2 || isShowPanel3}}" class="search-button">
+        <block wx:if="{{isShowPanel2}}">
+         <view class="onSearch" bindtap="onClickSearch">搜索</view> 
+        </block>
+        <block wx:else>
+          <image bindtap="onClickDelete2" class="delete2" mode="aspectFill" src="../../images/delete2.png"></image>
+        </block>
+      </view>
+    </view>
+    <!--分类面板-->
+    <block wx:if="{{isShowPanel1}}">
+      <view class="class-panel-1">
+        <view class="map-tab-ul">
+          <view class="map-tab-li" bindtap="getType" data-keywords="{{item.name}}" data-type="{{item.id}}" wx:key="aroundListId" wx:for="{{aroundList}}">
+            <image  mode='aspectFill' src="{{item.icon}}"></image>
+            <text>{{item.name}}</text>
+          </view>
+        </view>
+      </view>
+    </block>
+    <!--搜索面板-->
+    <block wx:elif="{{isShowPanel2}}">
+      <view class="class-panel-2">
+        <scroll-view scroll-y="true" style="height:{{scrollHeight1}}rpx" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+          <block wx:for-index="index" wx:for-item="item" wx:for="{{tips}}">
+            <view class="navigate-info-li">
+              <view class="left" bindtap="bindSearch" data-index="{{index}}">
+                <image class="navigate2" mode="aspectFill" src="../../images/navigate2.png"></image>
+                <view class="title">
+                  <text >{{item.name}}</text>
+                </view>
+                <view class="address">
+                  <text >{{item.address}}</text>
+                </view>
+              </view>
+              <view class="right">
+                <view class="btn navigate-btn" bindtap="navigate" data-index="{{item.id}}">
+                  <image mode="aspectFill" src="../../images/navigate.png"></image> 导航</view>
+              </view>
+            </view>
+          </block>
+        </scroll-view>
+      </view>
+    </block>
+    <!--搜索结果面板-->
+    <block wx:else>
+      <view  class="class-panel-3">
+        <block wx:if="{{isShowPanel3HaveData}}">
+          <view class="navigate-info-li first">
+            <view class="left" bindtap="bindSearchFirst" data-index="0">
+              <view class="title">
+                <text>{{textData.name}}</text>
+              </view>
+              <view class="address">
+                <text>地址: {{textData.address}}</text>
+              </view>
+              <view class="phone">
+                <text>电话: {{textData.phone}}</text>
+              </view>
+            </view>
+            <view class="right">
+              <view class="btn phone-tbn" bindtap="makePhoneCall" data-phone="{{textData.phone}}"><image mode="aspectFill" src="../../images/phone.png"></image> 电话 <text>|</text></view>
+              <view class="btn navigate-btn" bindtap="navigate" data-index="{{textData.id}}">
+                <image mode="aspectFill" src="../../images/navigate.png"></image> 导航</view>
+            </view>
+          </view>
+          <scroll-view scroll-y="true" style="height:{{scrollHeight2}}rpx" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+            <block wx:for-index="index" wx:for-item="item" wx:for="{{tips}}">
+              <view class="navigate-info-li">
+                <view class="left" bindtap="bindSearch" data-index="{{index}}">
+                  <view class="title">
+                    <text>{{item.name}}</text>
+                  </view>
+                  <view class="address">
+                    <text>地址: {{item.address}}</text>
+                  </view>
+                  <view class="phone">
+                    <text>电话: {{item.phone}}</text>
+                  </view>
+                </view>
+                <view class="right">
+                <view class="btn phone-tbn" bindtap="makePhoneCall" data-phone="{{item.phone}}"><image mode="aspectFill" src="../../images/phone.png"></image> 电话 <text>|</text></view>
+                  <view class="btn navigate-btn" bindtap="navigate" data-index="{{item.id}}">
+                    <image mode="aspectFill" src="../../images/navigate.png"></image> 导航</view>
+                </view>
+              </view>
+            </block>
+          </scroll-view>
+        </block>
+        <block wx:elseif>
+          <view class="nomore">暂无数据</view>
+        </block >
+        </view>
+      </block>
+  </view>
+  
+  <view class="map-tab-bar map-foot {{isShow ? '' : 'map-hide'}}">
+    <view class="map-name">{{textData.name}}</view>
+    <view class="map-address">{{textData.desc}}</view>
+  </view>
+  </view>
